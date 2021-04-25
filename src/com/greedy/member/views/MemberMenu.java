@@ -61,8 +61,33 @@ public class MemberMenu {
 		Map<String, String> map = new HashMap<>();
 		
 		/* 여기서는 사용자의 입력을 받아 맵에 넣는 것을 하면 됩니다. */
+		System.out.print("사용할 아이디 : ");
+		String memberId = sc.next();
+		System.out.print("사용할 비밀번호 : ");
+		String memberPwd = sc.next();
+		System.out.print("사용자의 이름 : ");
+		String memberName = sc.next();
+		System.out.print("사용자의 성별 : ");
+		String gender = sc.next();
+		System.out.print("사용자의 이메일 : ");
+		String email = sc.next();
+		System.out.print("사용자의 전화번호 : ");
+		String phone = sc.next();
+		System.out.print("사용자의 주소 : ");
+		sc.nextLine();
+		String address = sc.nextLine();
+		System.out.print("사용자의 나이 : ");
+		String age = sc.next();
 		
-		
+		map.put("id", memberId);
+		map.put("pwd", memberPwd);
+		map.put("name", memberName);
+		map.put("gender", gender);
+		map.put("email", email);
+		map.put("phone", phone);
+		map.put("address", address);
+		map.put("age", age); 
+		// age는 사실 int 값임
 		
 		return map;
 	}
@@ -72,7 +97,7 @@ public class MemberMenu {
 		System.out.print("조회할 성별 입력(남:M/여:F) : ");
 		sc.nextLine();
 		
-		return sc.nextLine().toLowerCase();
+		return sc.nextLine().toUpperCase();
 	}
 	
 	public String inputPassword() {

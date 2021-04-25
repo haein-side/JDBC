@@ -2,5 +2,85 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment/>
+<entry key = "registNewMember">
+    INSERT
+      INTO TBL_MEMBER(
+      	   MEMBER_NO
+	     , MEMBER_ID
+	     , MEMBER_PWD
+         , MEMBER_NAME
+         , GENDER
+         , EMAIL
+         , PHONE
+         , ADDRESS
+         , AGE
+         , ENROLL_DATE
+         )
+    VALUES(
+    	  SEQ_MEMBER_NO.NEXTVAL
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , SYSDATE
+         )
+
+</entry>
+
+<entry key = "selectAllMembers">
+    SELECT
+           *
+      FROM TBL_MEMBER
+
+</entry>
+
+<entry key = "searchMemberById">
+     SELECT
+           *
+       FROM TBL_MEMBER
+      WHERE MEMBER_ID = ?
+</entry>
+
+<entry key = "searchMemberByGender">
+	  SELECT
+	        *
+	    FROM TBL_MEMBER
+	   WHERE GENDER = ?
+</entry>
+
+<entry key = "modifyPassword">
+     UPDATE TBL_MEMBER
+        SET MEMBER_PWD = ?
+      WHERE MEMBER_ID = ?
+</entry>
+
+<entry key = "modifyEmail">
+     UPDATE TBL_MEMBER
+        SET EMAIL = ?
+      WHERE MEMBER_ID = ?
+</entry>
+
+<entry key = "modifyPhone">
+ 	 UPDATE TBL_MEMBER
+        SET PHONE = ?
+      WHERE MEMBER_ID = ?
+</entry>
+
+<entry key = "modifyAddress">
+ 	 UPDATE TBL_MEMBER
+        SET ADDRESS = ?
+      WHERE MEMBER_ID = ?
+</entry>
+
+<entry key = "deleteMember">
+ 	 DELETE
+ 	   FROM TBL_MEMBER
+ 	  WHERE MEMBER_ID = ?
+</entry>
+
 	
 </properties>

@@ -16,8 +16,9 @@ public class MemberResultView {
 			case "deleteFailed" : System.out.println("회원 탈퇴 실패!"); break;
 			case "selectFailed" : System.out.println("회원 조회 실패!"); break;
 			case "insertSuccess" : System.out.println("insert 성공!"); break;
-			case "updateSuccess" : System.out.println("insert 성공!"); break;
-			case "deleteSuccess" : System.out.println("insert 성공!"); break;
+			case "updateSuccess" : System.out.println("update 성공!"); break;
+			case "deleteSuccess" : System.out.println("delete 성공!"); break;
+			case "selectSuccess" : System.out.println("select 성공!"); break;
 			default : System.out.println("알 수 없는 에러 발생!"); break;
 		}
 		
@@ -29,6 +30,7 @@ public class MemberResultView {
 			System.out.println(m);
 		}
 		
+		displayDmlResult("selectSuccess");
 	}
 	
 	public void display(MemberDTO m) {
